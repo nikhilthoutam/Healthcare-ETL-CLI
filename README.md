@@ -5,19 +5,19 @@ It stores data in a MySQL database and provides an interactive CLI to run analyt
 
 ---
 
-## 📦 Features
+##  Features
 
-- ✅ Fetch COVID-19 case and vaccination data for any country
-- ✅ Filter by custom start and end date ranges
-- ✅ Store clean data into MySQL (`daily_cases` and `vaccination_data` tables)
-- ✅ Run built-in queries like:
+-  Fetch COVID-19 case and vaccination data for any country
+-  Filter by custom start and end date ranges
+-  Store clean data into MySQL (`daily_cases` and `vaccination_data` tables)
+-  Run built-in queries like:
   - Total cases
   - Daily trends
   - Top N countries by vaccinations
 
 ---
 
-## 🏗️ Tech Stack
+##  Tech Stack
 
 | Component      | Purpose                                         |
 |----------------|-------------------------------------------------|
@@ -30,7 +30,7 @@ It stores data in a MySQL database and provides an interactive CLI to run analyt
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 healthcare_etl_cli/
 │
@@ -50,7 +50,7 @@ healthcare_etl_cli/
 
 ---
 
-## 🚀 Setup Instructions
+##  Setup Instructions
 
 1. **Clone and enter the project**
     ```bash
@@ -95,26 +95,33 @@ python main.py list_tables
 # Drop tables (use with caution)
 python main.py drop_tables
 
-## Database Schema (daily_cases)
-daily_cases
-Column	Type
-id	INT (PK)
-report_date	DATE
-country_name	VARCHAR(255)
-total_cases	BIGINT
-new_cases	INT
-total_deaths	BIGINT
-new_deaths	INT
-etl_timestamp	TIMESTAMP
+## ## Database Schema
 
-## Database Schema (vaccination_data)
-vaccination_data
-Column	Type
-id	INT (PK)
-report_date	DATE
-country_name	VARCHAR(255)
-total_vaccinations	BIGINT
-etl_timestamp	TIMESTAMP
+### `daily_cases`
+
+| Column         | Type        | Description               |
+|----------------|-------------|---------------------------|
+| id             | INT (PK)    | Primary key               |
+| report_date    | DATE        | Date of the report        |
+| country_name   | VARCHAR(255)| Name of the country       |
+| total_cases    | BIGINT      | Total COVID-19 cases      |
+| new_cases      | INT         | New COVID-19 cases        |
+| total_deaths   | BIGINT      | Total deaths              |
+| new_deaths     | INT         | New deaths                |
+| etl_timestamp  | TIMESTAMP   | ETL process timestamp     |
+
+---
+
+### `vaccination_data`
+
+| Column             | Type        | Description                   |
+|--------------------|-------------|-------------------------------|
+| id                 | INT (PK)    | Primary key                   |
+| report_date        | DATE        | Date of the report            |
+| country_name       | VARCHAR(255)| Name of the country           |
+| total_vaccinations | BIGINT      | Total vaccination count       |
+| etl_timestamp      | TIMESTAMP   | ETL process timestamp         |
+
 
 ## Sample query
     Fetching data for India from 2023-01-01 to 2023-01-31...
