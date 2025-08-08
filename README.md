@@ -85,23 +85,25 @@ python main.py list_tables
 
 # Fetch and load data
 python main.py fetch_data India 2023-01-01 2023-01-31
+![Description](screenshorts/fetching%20data.png)
 
 
 # Query total cases 
 python main.py query_data total_cases India
-
+![Description](screenshorts/total%20cases%20India.png)
 
 # Query daily_trends
 python main.py query_data daily_trends USA new_cases
-
+![Description](screenshorts/daily%20trends%20USA.png)
 
 # View all tables
 python main.py list_tables
+![Description](screenshorts/list_tables.png)
 
 
 # Top 3 countries vaccinations report 
 python main.py query_data top_n_countries_by_metric 3 total_vaccinations
-
+![Description](screenshorts/top%203%20vaccination%20country.png)
 
 # Drop tables (use with caution)
 python main.py drop_tables
